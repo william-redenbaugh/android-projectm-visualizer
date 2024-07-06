@@ -1,0 +1,3 @@
+/Users/william-personal/git/FlashyFlashyFirmware/android-projectm-visualizer/app/.cxx/RelWithDebInfo/2y453234/armeabi-v7a/CMakeFiles/jniwrapper.dir
+/Users/william-personal/git/FlashyFlashyFirmware/android-projectm-visualizer/app/.cxx/RelWithDebInfo/2y453234/armeabi-v7a/CMakeFiles/edit_cache.dir
+/Users/william-personal/git/FlashyFlashyFirmware/android-projectm-visualizer/app/.cxx/RelWithDebInfo/2y453234/armeabi-v7a/CMakeFiles/rebuild_cache.dir

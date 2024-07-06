@@ -1,6 +1,7 @@
 apply plugin: 'com.android.application'
 
 android {
+    namespace = "com.github.projectm_android"
     compileSdkVersion 22
     defaultConfig {
         applicationId "com.github.projectm_android"
@@ -24,14 +25,16 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
     }
+
+
     externalNativeBuild {
         cmake {
             path "src/main/cpp/CMakeLists.txt"
         }
     }
     sourceSets {
-        main {
-            jniLibs.srcDirs 'jniLibs', 'jniLibs/armeabi-v7a'
+        getByName("main") {
+            jniLibs.srcDir("src/main/jniLibs")
         }
     }
     productFlavors {

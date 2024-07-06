@@ -1,0 +1,22 @@
+[
+  {
+    "level": "INFO",
+    "message": "android.ndkVersion from module build.gradle is 26"
+  },
+  {
+    "level": "INFO",
+    "message": "ndk.dir in local.properties is not set"
+  },
+  {
+    "level": "INFO",
+    "message": "ANDROID_NDK_HOME environment variable is not set"
+  },
+  {
+    "level": "INFO",
+    "message": "sdkFolder is /Users/william-personal/Library/Android/sdk"
+  },
+  {
+    "level": "ERROR",
+    "message": "Specified android.ndkVersion \u002726\u0027 does not have enough precision. Use major.minor.micro in version."
+  }
+]

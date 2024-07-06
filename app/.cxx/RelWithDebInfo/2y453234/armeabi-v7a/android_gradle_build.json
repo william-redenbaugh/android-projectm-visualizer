@@ -1,0 +1,40 @@
+{
+  "buildFiles": [
+    "/Users/william-personal/git/FlashyFlashyFirmware/android-projectm-visualizer/app/src/main/cpp/CMakeLists.txt"
+  ],
+  "cleanCommandsComponents": [
+    [
+      "/Users/william-personal/Library/Android/sdk/cmake/3.22.1/bin/ninja",
+      "-C",
+      "/Users/william-personal/git/FlashyFlashyFirmware/android-projectm-visualizer/app/.cxx/RelWithDebInfo/2y453234/armeabi-v7a",
+      "clean"
+    ]
+  ],
+  "buildTargetsCommandComponents": [
+    "/Users/william-personal/Library/Android/sdk/cmake/3.22.1/bin/ninja",
+    "-C",
+    "/Users/william-personal/git/FlashyFlashyFirmware/android-projectm-visualizer/app/.cxx/RelWithDebInfo/2y453234/armeabi-v7a",
+    "{LIST_OF_TARGETS_TO_BUILD}"
+  ],
+  "libraries": {
+    "jniwrapper::@6890427a1f51a3e7e1df": {
+      "toolchain": "toolchain",
+      "abi": "armeabi-v7a",
+      "artifactName": "jniwrapper",
+      "output": "/Users/william-personal/git/FlashyFlashyFirmware/android-projectm-visualizer/app/build/intermediates/cxx/RelWithDebInfo/2y453234/obj/armeabi-v7a/libjniwrapper.so",
+      "runtimeFiles": [
+        "/Users/william-personal/git/FlashyFlashyFirmware/android-projectm-visualizer/app/jniLibs/armeabi-v7a/libprojectM.so"
+      ]
+    }
+  },
+  "toolchains": {
+    "toolchain": {
+      "cCompilerExecutable": "/Users/william-personal/Library/Android/sdk/ndk/25.1.8937393/toolchains/llvm/prebuilt/darwin-x86_64/bin/clang.lld",
+      "cppCompilerExecutable": "/Users/william-personal/Library/Android/sdk/ndk/25.1.8937393/toolchains/llvm/prebuilt/darwin-x86_64/bin/clang++.lld"
+    }
+  },
+  "cFileExtensions": [],
+  "cppFileExtensions": [
+    "cpp"
+  ]
+}
