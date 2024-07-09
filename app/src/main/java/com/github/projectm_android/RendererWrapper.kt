@@ -1,45 +1,39 @@
-package com.github.projectm_android;
+package com.github.projectm_android
 
-import android.content.res.Resources;
-import android.opengl.GLSurfaceView.Renderer;
-import android.util.Log;
+import android.content.res.Resources
+import android.opengl.GLSurfaceView
+import android.util.Log
+import com.github.projectm_android.ProjectMJNIWrapper.nextPreset
+import com.github.projectm_android.ProjectMJNIWrapper.onDrawFrame
+import com.github.projectm_android.ProjectMJNIWrapper.onSurfaceChanged
+import com.github.projectm_android.ProjectMJNIWrapper.onSurfaceCreated
+import javax.microedition.khronos.egl.EGLConfig
+import javax.microedition.khronos.opengles.GL10
 
-import javax.microedition.khronos.egl.EGLConfig;
-import javax.microedition.khronos.opengles.GL10;
+class RendererWrapper(private val mAssetPath: String) : GLSurfaceView.Renderer {
+    private var mNextPreset = false
 
-public class RendererWrapper implements Renderer {
-    private String mAssetPath;
-
-    private Boolean mNextPreset = false;
-
-    public RendererWrapper(String assetPath) {
-        mAssetPath = assetPath;
+    override fun onSurfaceCreated(gl: GL10, config: EGLConfig) {
+        Log.d("projectM", "RenderWrapper onSurfaceCreated")
+        val width = Resources.getSystem().displayMetrics.widthPixels
+        val height = Resources.getSystem().displayMetrics.heightPixels
+        onSurfaceCreated(width, height, mAssetPath)
     }
 
-    @Override
-    public void onSurfaceCreated(GL10 gl, EGLConfig config) {
-        Log.d("projectM","RenderWrapper onSurfaceCreated");
-        int width = Resources.getSystem().getDisplayMetrics().widthPixels;
-        int height = Resources.getSystem().getDisplayMetrics().heightPixels;
-        libprojectMJNIWrapper.onSurfaceCreated(width, height, mAssetPath);
+    override fun onSurfaceChanged(gl: GL10, width: Int, height: Int) {
+        Log.d("projectM", "RenderWrapper onSurfaceChanged")
+        onSurfaceChanged(width, height)
     }
 
-    @Override
-    public void onSurfaceChanged(GL10 gl, int width, int height) {
-        Log.d("projectM","RenderWrapper onSurfaceChanged");
-        libprojectMJNIWrapper.onSurfaceChanged(width, height);
+    fun NextPreset() {
+        mNextPreset = true
     }
 
-    public void NextPreset() {
-        mNextPreset = true;
-    }
-
-    @Override
-    public void onDrawFrame(GL10 gl) {
+    override fun onDrawFrame(gl: GL10) {
         if (mNextPreset) {
-            mNextPreset = false;
-            libprojectMJNIWrapper.nextPreset();
+            mNextPreset = false
+            nextPreset()
         }
-        libprojectMJNIWrapper.onDrawFrame();
+        onDrawFrame()
     }
 }
